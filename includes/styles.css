@@ -1,0 +1,380 @@
+/* Stili comuni per tutte le pagine */
+body { 
+    padding-bottom: 100px !important;
+}
+
+.container {
+    margin-bottom: 10px;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hidden-value {
+    filter: blur(8px);
+    transition: filter 0.3s;
+    user-select: none;
+}
+
+.hidden-value.visible {
+    filter: blur(0);
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Indicatori di trend */
+.trend-indicator {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+.trend-up { color: #198754; }
+.trend-down { color: #dc3545; }
+
+/* Stili per la griglia delle categorie */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.category-item {
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+    position: relative;
+}
+
+.category-item:active {
+    transform: scale(0.98);
+}
+
+.category-item i {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.category-item .name {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    word-wrap: break-word;
+}
+
+/* Stili per la griglia delle icone */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.icon-item {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.icon-item.selected {
+    background-color: #e9ecef;
+    border-color: #0d6efd;
+}
+
+.icon-item i {
+    font-size: 1.5rem;
+}
+
+/* Stili per i conti */
+.account-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 15px;
+    padding: 20px;
+    height: 100%;
+}
+
+.account-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.account-card:active {
+    transform: scale(0.98);
+}
+
+.account-card .account-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.account-card .account-icon i {
+    font-size: 1.5rem;
+}
+
+.account-card .account-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.account-card .account-balance {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.account-card .account-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+#accountsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Stili per il selettore colori */
+.color-picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 8px;
+    padding: 10px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color-option.selected {
+    border-color: #000;
+}
+
+/* Stili per i tab delle categorie */
+.nav-pills .nav-link {
+    border-radius: 20px;
+    padding: 8px 20px;
+}
+
+/* Stili per la griglia di movimenti */
+.transaction-card {
+    transition: transform 0.2s;
+}
+
+.transaction-card:active {
+    transform: scale(0.98);
+}
+
+/* Stili per le griglie nei modali */
+.category-grid.modal-grid, 
+.account-grid.modal-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.category-item.modal-item, 
+.account-item.modal-item {
+    padding: 10px;
+}
+
+/* Stili per i pulsanti di azione */
+.account-actions,
+.category-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.account-actions button,
+.category-actions button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.account-actions button:hover,
+.category-actions button:hover {
+    transform: scale(1.05);
+}
+
+.account-card,
+.category-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.account-actions,
+.category-actions {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.account-card:hover .account-actions,
+.category-item:hover .category-actions {
+    opacity: 1;
+}
+
+/* Stili per le icone di azione nelle categorie */
+.category-item {
+    position: relative;
+}
+
+.category-item .category-actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    gap: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.category-item:hover .category-actions {
+    opacity: 1;
+}
+
+.category-item .btn-icon {
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #666;
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out;
+}
+
+.category-item .btn-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.category-item .btn-icon:first-child:hover {
+    color: #0d6efd; /* colore blu per modifica */
+}
+
+.category-item .btn-icon:last-child:hover {
+    color: #dc3545; /* colore rosso per eliminazione */
+}
+
+.category-item .btn-icon i {
+    font-size: 12px;
+}
+
+/* Stili per le card dei conti nel modal delle transazioni */
+#accountGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.account-select-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.account-select-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.account-select-card.selected {
+    border: 2px solid #0d6efd;
+    background-color: #f8f9fa;
+}
+
+.account-select-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.account-select-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Stili per la selezione delle categorie nel modal */
+#categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category-item {
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.category-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-item.selected {
+    border-width: 3px;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-item i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-item .name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
